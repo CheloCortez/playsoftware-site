@@ -1,14 +1,14 @@
-# ENYX Site Institucional — Implementation Plan
+# Play Software Site Institucional — Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Construir o site institucional da software house ENYX — uma landing page única, estática, em português, que apresenta serviços, portfólio, processo e fundadores, e converte o visitante em conversa via WhatsApp.
+**Goal:** Construir o site institucional da software house Play Software — uma landing page única, estática, em português, que apresenta serviços, portfólio, processo e fundadores, e converte o visitante em conversa via WhatsApp.
 
 **Architecture:** Next.js 16 App Router renderizando estaticamente uma única rota (`/`) composta por 8 seções. Todo o conteúdo textual vive em um módulo de dados tipado (`src/content/site.ts`) que nenhum componente contorna. Os componentes se dividem em três camadas: primitivos de UI reutilizáveis (`ui/`), casca da página (`layout/`) e seções (`sections/`). A lógica real do site — montar a URL do WhatsApp e validar o formulário — fica em funções puras em `src/lib/`, e é o único código coberto por testes automatizados.
 
 **Tech Stack:** Next.js 16.3, React 19.2, TypeScript, Tailwind CSS 4.3, lucide-react 1.x, motion 13.x, Vitest 4.x. Deploy na Vercel.
 
-**Spec:** `docs/superpowers/specs/2026-08-14-enyx-site-design.md` — leia antes de começar; este plano implementa aquele documento e não o repete por inteiro (os textos completos das seções estão lá).
+**Spec:** `docs/superpowers/specs/2026-08-14-playsoftware-site-design.md` — leia antes de começar; este plano implementa aquele documento e não o repete por inteiro (os textos completos das seções estão lá).
 
 ## Global Constraints
 
@@ -18,7 +18,7 @@ Estas regras valem para **todas** as tasks:
 - **Diretório de trabalho:** a raiz deste repositório. O repositório git já existe (branch `main`, dois commits de documentação). Todos os caminhos neste plano são relativos a essa raiz.
 - **Versões exatas a instalar:** `next@16.3.1`, `react@19.2.8`, `react-dom@19.2.8`, `tailwindcss@4.3.3`, `@tailwindcss/postcss@4.3.3`, `lucide-react@1.31.0`, `motion@13.1.0`, `vitest@4.1.10`.
 - **Idioma:** todo texto visível é português do Brasil, com acentuação correta. Nunca escreva "nao" por "não". Mensagens de commit também em português.
-- **Zero hardcode de marca.** Nenhum componente escreve "ENYX", e-mail, telefone, domínio ou URL de projeto literalmente. Tudo vem de `src/content/site.ts`. O nome da empresa ainda pode mudar.
+- **Zero hardcode de marca.** Nenhum componente escreve "Play Software", e-mail, telefone, domínio ou URL de projeto literalmente. Tudo vem de `src/content/site.ts`. O nome da empresa ainda pode mudar.
 - **Uma cor de destaque.** `--color-accent` (`#00E39B`) é o único acento. Não introduza azul, roxo, laranja ou um segundo verde.
 - **Mobile-first.** Classes base valem para celular; breakpoints só adicionam. Zero scroll horizontal em 360px de largura, em qualquer seção.
 - **Paleta (valores exatos):** `bg #0A0E10` · `bg-alt #0D1214` · `surface #12171A` · `surface-2 #171D21` · `border #1F262A` · `border-soft #2A3338` · `text #E8EDEF` · `muted #8A9BA3` · `accent #00E39B` · `accent-dim #0B7A5A` · `accent-soft rgba(0,227,155,0.10)`.
@@ -252,7 +252,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ENYX",
+  title: "Play Software",
   description: "Software house digital.",
 };
 
@@ -332,7 +332,7 @@ Esperado: ambos sem erro.
 
 ```bash
 git add -A
-git commit -m "feat: scaffold Next.js com tokens de design e tipografia da ENYX"
+git commit -m "feat: scaffold Next.js com tokens de design e tipografia da Play Software"
 ```
 
 ---
@@ -497,14 +497,14 @@ export type SocialLink = { icon: IconName; label: string; url: string };
 
 export const site = {
   brand: {
-    name: "ENYX",
+    name: "Play Software",
     /** Parte do nome pintada de verde no logo. */
-    nameAccent: "EN",
-    nameRest: "YX",
-    url: "https://enyxsh.com.br",
+    nameAccent: "Play",
+    nameRest: "Software",
+    url: "https://playsoftware.dev",
     tagline:
       "Studio de engenharia dedicado a construir soluções digitais de alto valor, com rigor técnico e visão de negócio.",
-    copyright: "© 2026 ENYX. Todos os direitos reservados.",
+    copyright: "© 2026 Play Software. Todos os direitos reservados.",
   },
 
   nav: [
@@ -526,7 +526,7 @@ export const site = {
     subtitleHighlight: "excelência técnica",
     primaryCta: { label: "Iniciar um Projeto", href: "#contato" },
     secondaryCta: { label: "Explorar Case Studies", href: "#portfolio" },
-    codeTitle: "ENYX.StartProject",
+    codeTitle: "PlaySoftware.StartProject",
     deliveryLabel: "Taxa de Entrega",
     deliveryValue: "100%",
   },
@@ -760,7 +760,7 @@ export const site = {
     /** Placeholder — substituir pelo número real. Só dígitos, com DDI. */
     whatsapp: "5511999999999",
     /** Placeholder — substituir pelo e-mail real. */
-    email: "contato@enyx.dev",
+    email: "contato@playsoftware.dev",
   },
 
   footer: {
@@ -781,7 +781,7 @@ export const site = {
   },
 
   seo: {
-    title: "ENYX — Software House Digital",
+    title: "Play Software — Software House Digital",
     description:
       "Software house especializada em SaaS, micro-SaaS e sistemas web sob medida. Transformamos ideias em produtos com rigor técnico e visão de negócio.",
     keywords: [
@@ -1743,7 +1743,7 @@ export function CodeCard() {
           <code>
             <span className={KW}>const</span> <span className={VAR}>projeto</span>{" "}
             <span className={PUNC}>=</span> <span className={KW}>await</span>{" "}
-            <span className={VAR}>enyx</span>
+            <span className={VAR}>playSoftware</span>
             {"\n  "}
             <span className={PUNC}>.</span>
             <span className={FN}>analisar</span>
@@ -2724,7 +2724,7 @@ export default function RootLayout({
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <rect width="64" height="64" rx="14" fill="#0A0E10"/>
-  <text x="32" y="45" fill="#00E39B" font-family="monospace" font-size="38" font-weight="bold" text-anchor="middle">E</text>
+  <text x="32" y="45" fill="#00E39B" font-family="monospace" font-size="38" font-weight="bold" text-anchor="middle">P</text>
 </svg>
 ```
 
@@ -2752,7 +2752,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 User-agent: *
 Allow: /
 
-Sitemap: https://enyxsh.com.br/sitemap.xml
+Sitemap: https://playsoftware.dev/sitemap.xml
 ```
 
 - [ ] **Step 5: `src/app/not-found.tsx`**
@@ -2847,10 +2847,10 @@ Deve conter: visão do site, stack e versões, estrutura de pastas com a respons
 No `CLAUDE.md` do diretório pai (fora deste repositório), acrescente uma quarta entrada na lista, no mesmo formato das outras três:
 
 ```markdown
-- **`enyx-site/`** — **ENYX**, site institucional da software house (cartão de visitas): serviços,
+- **`playsoftware-site/`** — **Play Software**, site institucional da software house (cartão de visitas): serviços,
   portfólio, processo e fundadores, com contato via WhatsApp. Next.js 16 + Tailwind v4, estático,
   deploy na Vercel.
-  👉 Leia **[`enyx-site/CLAUDE.md`](enyx-site/CLAUDE.md)** — tem o design system e a regra de que
+  👉 Leia **[`playsoftware-site/CLAUDE.md`](playsoftware-site/CLAUDE.md)** — tem o design system e a regra de que
   todo conteúdo vive em `src/content/site.ts`.
 ```
 

@@ -1,15 +1,15 @@
-# ENYX — Site Institucional (design spec)
+# Play Software — Site Institucional (design spec)
 
 **Data:** 2026-08-14
 **Status:** aprovado para implementação
 
 ## 1. Objetivo
 
-Site institucional da **ENYX**, software house de Henrique e Marcelo. Funciona como cartão de
+Site institucional da **Play Software**, software house de Henrique e Marcelo. Funciona como cartão de
 visitas: apresenta a empresa, os serviços, o processo de trabalho, os projetos já entregues e os
 fundadores, e converte o visitante em conversa via WhatsApp.
 
-Já existe um protótipo feito no Lovable. Este projeto **reconstrói o site do zero**, reproduzindo
+Já existe um protótipo anterior do site. Este projeto **reconstrói o site do zero**, reproduzindo
 fielmente o design e reaproveitando os textos do protótipo (transcritos na seção 6).
 
 Não-objetivos: blog, CMS, área logada, i18n, formulário com backend/e-mail, analytics.
@@ -27,15 +27,15 @@ Não-objetivos: blog, CMS, área logada, i18n, formulário com backend/e-mail, a
 | Estrutura | Landing única com âncoras | Confirmado com o cliente |
 | Formulário | Abre WhatsApp com mensagem pré-preenchida | Zero infra, zero custo; envio isolado atrás de uma função para trocar depois |
 | Conteúdo | Centralizado em `src/content/site.ts` | Rebrand/edição sem tocar em componente |
-| Deploy | Vercel, domínio `enyxsh.com.br` (a confirmar) | — |
+| Deploy | Vercel, domínio `playsoftware.dev` | — |
 
-**Nome e domínio não estão fechados.** Por isso nenhum componente escreve "ENYX", e-mail ou
+**Nome e domínio não estão fechados.** Por isso nenhum componente escreve "Play Software", e-mail ou
 domínio literalmente — tudo vem de `site.ts`. Trocar a marca é editar um arquivo.
 
 ## 3. Estrutura de arquivos
 
 ```
-enyx-site/
+playsoftware-site/
 ├── CLAUDE.md
 ├── next.config.ts
 ├── tsconfig.json
@@ -175,16 +175,16 @@ Tudo abaixo vive em `src/content/site.ts`.
 ### Marca
 - Logo: `EN` em `--accent` + `YX` em `--text`, mono/bold.
 - Tagline do footer: "Studio de engenharia dedicado a construir soluções digitais de alto valor, com rigor técnico e visão de negócio."
-- Copyright: "© 2026 ENYX. Todos os direitos reservados."
+- Copyright: "© 2026 Play Software. Todos os direitos reservados."
 
 ### Hero
 - Badge: `SOFTWARE HOUSE DIGITAL` (com dot verde pulsante)
 - Título: "Transformando ideias em ***produtos***"
 - Subtítulo: "Desenvolvimento de sistemas web com rigor técnico e pragmatismo. Onde a **excelência técnica** encontra a estratégia de escala." (trecho em negrito na cor `--text`)
 - CTAs: "Iniciar um Projeto" (primário, seta) → `#contato` · "Explorar Case Studies" (secundário, ícone link externo) → `#portfolio`
-- Bloco de código — título da janela `ENYX.StartProject`, três traffic lights (vermelho/amarelo/verde):
+- Bloco de código — título da janela `PlaySoftware.StartProject`, três traffic lights (vermelho/amarelo/verde):
   ```js
-  const projeto = await enyx
+  const projeto = await playSoftware
     .analisar(requisitos)
     .projetar(arquitetura)
     .desenvolver(features)
@@ -295,8 +295,8 @@ O site começa com placeholders, listados aqui para troca depois (tudo em `site.
 | Item | Placeholder |
 |---|---|
 | WhatsApp | `5511999999999` |
-| E-mail | `contato@enyx.dev` |
-| Domínio | `https://enyxsh.com.br` |
+| E-mail | `contato@playsoftware.dev` |
+| Domínio | `https://playsoftware.dev` |
 | URLs dos 4 cases | `#` (link fica desabilitado quando a URL é `#`) |
 | Capas do portfólio | SVG gradiente escuro com o nome do projeto |
 | Fotos dos fundadores | Avatar SVG com a inicial |

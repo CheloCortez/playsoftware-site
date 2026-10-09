@@ -40,14 +40,14 @@ export type SocialLink = { icon: IconName; label: string; url: string };
 
 export const site = {
   brand: {
-    name: "ENYX",
-    /** Parte do nome pintada de verde no logo. */
-    nameAccent: "EN",
-    nameRest: "YX",
-    url: "https://enyxsh.com.br",
+    name: "Play Software",
+    /** Parte do nome pintada de verde no logo (as duas partes são separadas por um espaço). */
+    nameAccent: "Play",
+    nameRest: "Software",
+    url: "https://playsoftware.dev",
     tagline:
       "Studio de engenharia dedicado a construir soluções digitais de alto valor, com rigor técnico e visão de negócio.",
-    copyright: "© 2026 ENYX. Todos os direitos reservados.",
+    copyright: "© 2026 Play Software. Todos os direitos reservados.",
   },
 
   nav: [
@@ -69,9 +69,9 @@ export const site = {
     subtitleHighlight: "excelência técnica",
     primaryCta: { label: "Iniciar um Projeto", href: "#contato" },
     secondaryCta: { label: "Explorar Case Studies", href: "#portfolio" },
-    codeTitle: "ENYX.StartProject",
+    codeTitle: "PlaySoftware.StartProject",
     /** Identificador usado dentro do snippet de código do CodeCard. */
-    codeIdentifier: "enyx",
+    codeIdentifier: "playSoftware",
     deliveryLabel: "Taxa de Entrega",
     deliveryValue: "100%",
   },
@@ -305,7 +305,7 @@ export const site = {
     /** Placeholder — substituir pelo número real. Só dígitos, com DDI. */
     whatsapp: "5511999999999",
     /** Placeholder — substituir pelo e-mail real. */
-    email: "contato@enyx.dev",
+    email: "contato@playsoftware.dev",
   },
 
   footer: {
@@ -326,7 +326,7 @@ export const site = {
   },
 
   seo: {
-    title: "ENYX — Software House Digital",
+    title: "Play Software — Software House Digital",
     description:
       "Software house especializada em SaaS, micro-SaaS e sistemas web sob medida. Transformamos ideias em produtos com rigor técnico e visão de negócio.",
     keywords: [

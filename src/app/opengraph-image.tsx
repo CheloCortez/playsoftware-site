@@ -29,6 +29,7 @@ export default function Image() {
             fontSize: 108,
             fontWeight: 800,
             letterSpacing: -2,
+            gap: 28,
           }}
         >
           <span style={{ color: "#00e39b" }}>{site.brand.nameAccent}</span>

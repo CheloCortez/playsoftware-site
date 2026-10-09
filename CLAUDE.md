@@ -1,6 +1,6 @@
 @AGENTS.md
 
-# CLAUDE.md — enyx-site
+# CLAUDE.md — playsoftware-site
 
 > A linha `@AGENTS.md` acima é gerada e sobrescrita automaticamente pelo `next dev`
 > (`node_modules/next/dist/server/lib/generate-agent-files.js`). Não a remova nem a mova —
@@ -9,7 +9,7 @@
 
 ## Visão
 
-Site institucional de página única (`/`) para a ENYX, uma software house. Funciona como
+Site institucional de página única (`/`) para a Play Software, uma software house. Funciona como
 cartão de visitas digital: apresenta serviços, portfólio, processo de trabalho e
 fundadores, e converte contato via formulário (que abre o WhatsApp com a mensagem
 pré-preenchida) ou link direto de WhatsApp.
@@ -18,9 +18,9 @@ pré-preenchida) ou link direto de WhatsApp.
 `src/content/site.ts`.
 
 Spec de design original (aprovado pelo cliente):
-[`docs/superpowers/specs/2026-08-14-enyx-site-design.md`](./docs/superpowers/specs/2026-08-14-enyx-site-design.md).
+[`docs/superpowers/specs/2026-08-14-playsoftware-site-design.md`](./docs/superpowers/specs/2026-08-14-playsoftware-site-design.md).
 Plano de implementação em 13 tasks:
-[`docs/superpowers/plans/2026-08-14-enyx-site.md`](./docs/superpowers/plans/2026-08-14-enyx-site.md).
+[`docs/superpowers/plans/2026-08-14-playsoftware-site.md`](./docs/superpowers/plans/2026-08-14-playsoftware-site.md).
 
 ## Stack e versões
 
@@ -73,7 +73,7 @@ docs/superpowers/              # spec de design e plano de implementação (hist
 
 - **`content/site.ts`** é o único lugar onde texto, rótulo, número, URL ou copy de
   marketing deveria existir. Componentes leem daqui; nunca escrevem conteúdo.
-- **`components/ui/`** não sabe nada sobre a ENYX especificamente — são primitivos de
+- **`components/ui/`** não sabe nada sobre a Play Software especificamente — são primitivos de
   layout/estilo reutilizáveis (um `Card` não sabe o que vai dentro dele).
 - **`components/layout/`** é o "esqueleto" que envolve as seções (navbar fixa, menu
   mobile, rodapé) — aparece uma vez por página.

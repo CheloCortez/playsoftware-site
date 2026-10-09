@@ -1,6 +1,6 @@
-# ENYX — Site Institucional
+# Play Software — Site Institucional
 
-Landing page institucional da ENYX, uma software house. É o "cartão de visitas"
+Landing page institucional da Play Software, uma software house. É o "cartão de visitas"
 digital da empresa: serviços, portfólio, processo de trabalho, fundadores e um formulário
 de contato que abre o WhatsApp com a mensagem já preenchida.
 
@@ -10,7 +10,7 @@ Site 100% estático, página única (`/`), construído com **Next.js 16** (App R
 
 Para detalhes de arquitetura, design system e convenções de código, veja
 [`CLAUDE.md`](./CLAUDE.md). Para o spec de design original (aprovado pelo cliente), veja
-[`docs/superpowers/specs/2026-08-14-enyx-site-design.md`](./docs/superpowers/specs/2026-08-14-enyx-site-design.md).
+[`docs/superpowers/specs/2026-08-14-playsoftware-site-design.md`](./docs/superpowers/specs/2026-08-14-playsoftware-site-design.md).
 
 ## Comandos
 
@@ -70,10 +70,9 @@ funcionamento ou o deploy. Quando os dados reais estiverem disponíveis, atualiz
 | Campo | Onde | Placeholder atual |
 |---|---|---|
 | WhatsApp (só dígitos, com DDI) | `site.contact.whatsapp` | `5511999999999` |
-| E-mail | `site.contact.email` | `contato@enyx.dev` |
+| E-mail | `site.contact.email` | `contato@playsoftware.dev` |
 | URL de cada projeto do portfólio | `site.projects[].url` | `#` (4 projetos) |
 | URLs de GitHub / LinkedIn / Instagram | `site.footer.socials[].url` | `#` (os 3 — o rodapé já esconde automaticamente qualquer social cuja URL seja `#`) |
-| Domínio final | `site.brand.url` (usado também por `src/app/robots.ts` e `src/app/sitemap.ts`) | `https://enyxsh.com.br` |
 
 O link de WhatsApp é normalizado (só dígitos) tanto no envio do formulário quanto no link
 direto "WhatsApp direto" — ver `src/lib/whatsapp.ts` — então qualquer formatação (`+55 (11)
