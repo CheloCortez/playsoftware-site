@@ -80,17 +80,16 @@ direto "WhatsApp direto" — ver `src/lib/whatsapp.ts` — então qualquer forma
 
 ## Deploy (Vercel)
 
-O deploy não foi executado neste momento porque exige login interativo do usuário. Para
-publicar:
+O site está no projeto Vercel `playsoftware-site` (time `cheloideas`), conectado ao
+repositório GitHub `CheloCortez/playsoftware-site`:
 
-```bash
-npx vercel login      # login interativo — só quem tem a conta pode rodar
-npx vercel link --yes
-npx vercel --prod
-```
+- todo push na `main` gera um deploy de **produção** automaticamente;
+- pushes em outras branches geram deploys de **preview**.
 
-Depois do deploy, confirme na URL de produção: o menu mobile funcionando num celular de
-verdade e o botão de WhatsApp abrindo o app.
+Domínios do projeto: `playsoftware.dev` (principal) e `www.playsoftware.dev`
+(redireciona 308 para o principal). O DNS do domínio fica na name.com.
+
+Deploy manual pela CLI, se necessário: `npx vercel --prod`.
 
 ## Stack
 
